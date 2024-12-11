@@ -1,3 +1,4 @@
+import 'package:chat_app/components/my_button.dart';
 import 'package:chat_app/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,8 @@ class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   LoginPage({super.key});
+
+  void login() {}
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +35,23 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
               textEditingController: _passwordController,
             ),
+            MyButton(
+              text: "Login",
+              onTap: login,
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Not a member...?"),
+                Text(
+                  "Register Now",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            )
           ],
         ),
       ),
