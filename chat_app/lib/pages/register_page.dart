@@ -2,13 +2,16 @@ import 'package:chat_app/components/my_button.dart';
 import 'package:chat_app/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final void Function()? onTap;
-  LoginPage({super.key, required this.onTap});
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
-  void login() {}
+  final void Function()? onTap;
+  RegisterPage({super.key, this.onTap});
+
+  void register() {}
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Text("Welcome back, you've been missed"),
+            const Text("Let's Create an account for you"),
             MyTextfield(
               hintText: "Email",
               obscureText: false,
@@ -36,21 +39,23 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
               textEditingController: _passwordController,
             ),
-            MyButton(
-              text: "Login",
-              onTap: login,
+            MyTextfield(
+              hintText: "Password",
+              obscureText: true,
+              textEditingController: _confirmPasswordController,
             ),
+            MyButton(text: "Login", onTap: register),
             const SizedBox(
               height: 25,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Not a member...?"),
+                const Text("Already have an account...?"),
                 GestureDetector(
                   onTap: onTap,
                   child: const Text(
-                    "Register Now",
+                    "Login Now",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 )

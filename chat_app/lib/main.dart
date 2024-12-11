@@ -1,4 +1,4 @@
-import 'package:chat_app/pages/login_page.dart';
+import 'package:chat_app/auth/login_or_register.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginPage(),
+      home: const LoginOrRegister(),
     );
   }
 }
